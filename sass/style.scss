@@ -1,6 +1,26 @@
+/*PRIMARY COLORS*/
+
+$softRed: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$darkDesaturatedCyan: hsl(167, 40%, 24%);
+$darkBlue: hsl(198, 62%, 26%);
+$darkModerateCyan: hsl(168, 34%, 41%);
+
+/*Neutral*/
+
+
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
 }
 
 h1,
@@ -13,6 +33,43 @@ section a{
     font-family: 'Fraunces', serif;
 }
 
+.container{
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+}
+
 body{
     font-family: 'Barlow', sans-serif;
+}
+
+.headerSection{
+    height: 100vh;
+    background-image: url(/images/desktop/image-header.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 32px;
+}
+
+header{
+    .container{
+        justify-content: space-between;
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+
+        li:last-child a{
+            color: #000;
+        }
+    }
+
+    li{
+        margin-left: 16px;
+    }
+
+    a{
+        color: #FFF;
+    }
 }
