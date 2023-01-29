@@ -1,3 +1,8 @@
+/*FONTS*/
+
+$fraunces: 'Fraunces', serif;
+$barlow: 'Barlow', sans-serif;;
+
 /*PRIMARY COLORS*/
 
 $softRed: hsl(7, 99%, 70%);
@@ -8,6 +13,12 @@ $darkModerateCyan: hsl(168, 34%, 41%);
 
 /*Neutral*/
 
+$veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
+$veryDarkGrayishBlue: hsl(213, 9%, 39%);
+$darkGrayishBlue: hsl(232, 10%, 55%);
+$grayishBlue: hsl(210, 4%, 67%);
+$white: #FFF;
+$black: #000;
 
 *{
     padding: 0;
@@ -30,7 +41,7 @@ h4,
 h5,
 h6,
 section a{
-    font-family: 'Fraunces', serif;
+    font-family: $fraunces;
 }
 
 .container{
@@ -40,7 +51,7 @@ section a{
 }
 
 body{
-    font-family: 'Barlow', sans-serif;
+    font-family: $barlow;
 }
 
 .headerSection{
@@ -62,11 +73,24 @@ header{
 
         li:last-child a{
             color: #000;
+            font-family: $fraunces;
+            display: inline-flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            height: 48px;
+            width: 130px;
+            background-color: #FFF;
+            border-radius: 16px;
+        }
+
+        li:last-child a:hover{
+            background-color: $darkModerateCyan;
         }
     }
 
     li{
-        margin-left: 16px;
+        margin-left: 48px;
     }
 
     a{
