@@ -1,3 +1,5 @@
+@import 'animation.scss';
+
 /*FONTS*/
 
 $fraunces: 'Fraunces', serif;
@@ -10,6 +12,7 @@ $yellow: hsl(51, 100%, 49%);
 $darkDesaturatedCyan: hsl(167, 40%, 24%);
 $darkBlue: hsl(198, 62%, 26%);
 $darkModerateCyan: hsl(168, 34%, 41%);
+$lightCyan: #6fcfff;
 
 /*Neutral*/
 
@@ -62,6 +65,8 @@ body{
     padding: 32px;
 }
 
+/*HEADER DESKTOP*/
+
 header{
     .container{
         justify-content: space-between;
@@ -80,12 +85,15 @@ header{
             align-items: center;
             height: 48px;
             width: 130px;
-            background-color: #FFF;
+            background-color: $white;
             border-radius: 16px;
+            transition: 0.5s;
+            border: 1px solid $white;
         }
 
         li:last-child a:hover{
-            background-color: $darkModerateCyan;
+            background-color: $lightCyan;
+            color: $white;
         }
     }
 
@@ -95,5 +103,29 @@ header{
 
     a{
         color: #FFF;
+    }
+}
+
+/*BANNER*/
+
+.banner{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .container{
+        justify-content: center;
+        padding-top: 64px;
+    }
+
+    h1{
+        font-size: 48px;
+        color: $white;
+    }
+
+    .arrowDown{
+        animation: arrowFloat 1s infinite alternate ease-in-out;
     }
 }
