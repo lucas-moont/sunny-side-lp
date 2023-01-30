@@ -23,6 +23,23 @@ $grayishBlue: hsl(210, 4%, 67%);
 $white: #FFF;
 $black: #000;
 
+/*MEDIA QUERY*/
+
+$tableWidth: 1024px;
+$mobileWidth: 767px;
+
+@mixin tablet {
+    @media (max-width: $tableWidth){
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobileWidth){
+        @content;
+    }
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -57,6 +74,39 @@ body{
     font-family: $barlow;
 }
 
+
+@mixin col{
+    width: 50%;
+    align-items: center;
+}
+
+@mixin colText{
+    padding: 32px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin fiftyBackground{
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+
+    @include mobile(){
+        background-size: 0;
+    }
+}
+
+@mixin imgHidden{
+    opacity: 0;
+
+    @include mobile(){
+        opacity: 1;
+    }
+}
+
+/*HEADER DESKTOP*/
+
 .headerSection{
     height: 100vh;
     background-image: url(/images/desktop/image-header.jpg);
@@ -64,8 +114,6 @@ body{
     background-position: center;
     padding: 32px;
 }
-
-/*HEADER DESKTOP*/
 
 header{
     .container{
@@ -127,5 +175,16 @@ header{
 
     .arrowDown{
         animation: arrowFloat 1s infinite alternate ease-in-out;
+    }
+}
+
+#transform{
+    @include fiftyBackground;
+    background-image: url(/images/desktop/image-transform.jpg);
+    padding: 0 32px;
+    
+
+    .firstCol{
+        @include colText;
     }
 }
