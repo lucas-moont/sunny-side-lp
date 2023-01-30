@@ -9,7 +9,7 @@ $barlow: 'Barlow', sans-serif;;
 
 $softRed: hsl(7, 99%, 70%);
 $yellow: hsl(51, 100%, 49%);
-$darkDesaturatedCyan: hsl(167, 40%, 24%);
+$darkDesaturatedCyan: #222f3f;
 $darkBlue: hsl(198, 62%, 26%);
 $darkModerateCyan: hsl(168, 34%, 41%);
 $lightCyan: #6fcfff;
@@ -116,6 +116,9 @@ body{
 }
 
 header{
+    display: flex;
+    justify-content: center;
+
     .container{
         justify-content: space-between;
     }
@@ -179,12 +182,34 @@ header{
 }
 
 #transform{
+    display: flex;
+    justify-content: center;
+
     @include fiftyBackground;
     background-image: url(/images/desktop/image-transform.jpg);
+    background-position-x: right;
     padding: 0 32px;
     
 
     .firstCol{
         @include colText;
+        padding-right: 100px;
     }
+}
+
+.columnTextTitle{
+    color: $darkDesaturatedCyan;
+    font-size: 34px;
+    line-height: 1.2em;
+    margin-bottom: 32px;
+}
+
+.hideImage{
+    @include imgHidden();
+}
+
+.columnsParagraph{
+    font-size: 18px;
+    color: $grayishBlue;
+    font-weight: 300;
 }
