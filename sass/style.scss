@@ -108,10 +108,13 @@ body{
 }
 
 @mixin pseudoBackground{
+    content: '';
     position: absolute;
     width: 50%;
     height: 100%;
     background-size: 100%;
+    top: 0;
+    z-index: -1;
 }
 
 /*HEADER DESKTOP*/
@@ -280,21 +283,30 @@ section{
 
 #services{
     position: relative;
-    padding: 150px;
+
+    .container{
+        display: flex;
+    }
 
     &:before{
         left: 0;
+        background-image: url('/images/desktop/image-graphic-design.jpg');
     }
 
     &::after{
         right: 0;
+        background-image: url('/images/desktop/image-photography.jpg');
     }
 
     &:before,
     &:after{
-        content: '';
         @include pseudoBackground();
-        background-color: red;
-        top: 0;
+    }
+
+    .firstCol,
+    .secondCol{
+        width: 50%;
+        text-align: center;
+        padding: 400px 16px 64px;
     }
 }
