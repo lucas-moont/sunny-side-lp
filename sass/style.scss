@@ -10,9 +10,10 @@ $barlow: 'Barlow', sans-serif;;
 $softRed: hsl(7, 99%, 70%);
 $yellow: hsl(51, 100%, 49%);
 $darkDesaturatedCyan: #222f3f;
-$darkBlue: hsl(198, 62%, 26%);
-$darkModerateCyan: hsl(168, 34%, 41%);
+$darkBlue: #19536b;
+$darkModerateCyan: #458c7e;
 $lightCyan: #6fcfff;
+$servicesTextColor: #245349AA;
 
 /*Neutral*/
 
@@ -112,9 +113,10 @@ body{
     position: absolute;
     width: 50%;
     height: 100%;
-    background-size: 100%;
+    background-size: cover;
     top: 0;
     z-index: -1;
+    background-repeat: no-repeat;
 }
 
 /*HEADER DESKTOP*/
@@ -308,5 +310,21 @@ section{
         width: 50%;
         text-align: center;
         padding: 400px 16px 64px;
+        color: $servicesTextColor;
+    }
+
+    h2{
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    h3{
+        font-size: 16px;
+        font-weight: 400;
+        display: inline-flex;
+
+        span{
+            max-width: 328px;
+        }
     }
 }
