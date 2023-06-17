@@ -22,6 +22,8 @@ $darkGrayishBlue: hsl(232, 10%, 55%);
 $grayishBlue: hsl(210, 4%, 67%);
 $white: #FFF;
 $black: #000;
+$lowOpacityPink: #ff746355;
+$highOpacityPink: #ff7463;
 
 /*MEDIA QUERY*/
 
@@ -181,13 +183,12 @@ header{
     }
 }
 
-#transform{
+#transform,
+#standout{
     display: flex;
     justify-content: center;
 
     @include fiftyBackground;
-    background-image: url(/images/desktop/image-transform.jpg);
-    background-position-x: right;
     padding: 0 32px;
     
 
@@ -195,6 +196,11 @@ header{
         @include colText;
         padding-right: 100px;
     }
+}
+
+#transform{
+    background-image: url(/images/desktop/image-transform.jpg);
+    background-position-x: right;
 
     .columnLearnMore::after{
         background-color: #fad300A5;
@@ -202,6 +208,22 @@ header{
     
     .columnLearnMore:hover::after{
         background-color:#fad300;   
+    }
+}
+
+#standout{
+    background-image: url(/images/desktop/image-stand-out.jpg);
+    background-position-x: left;
+    .container{
+        flex-direction: row-reverse;
+    }
+
+    .columnLearnMore::after{
+        background-color: $lowOpacityPink;
+    }
+    
+    .columnLearnMore:hover::after{
+        background-color: $highOpacityPink;   
     }
 }
 
