@@ -119,6 +119,14 @@ body{
     background-repeat: no-repeat;
 }
 
+/*GENERAL*/
+
+.threeColumnsGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
 /*HEADER DESKTOP*/
 
 .headerSection{
@@ -210,13 +218,16 @@ section{
 
     .firstCol{
         @include colText;
-        padding-right: 100px;
     }
 }
 
 #transform{
     background-image: url(/images/desktop/image-transform.jpg);
     background-position-x: right;
+
+    .firstCol{
+        padding-right: 100px;
+    }
 
     .columnLearnMore::after{
         background-color: #fad300A5;
@@ -232,6 +243,10 @@ section{
     background-position-x: left;
     .container{
         flex-direction: row-reverse;
+    }
+
+    .firstCol{
+        padding-left: 100px;
     }
 
     .columnLearnMore::after{
@@ -335,6 +350,10 @@ section{
     .container{
         display: block;
     }
+
+    .gridCol{
+        text-align: center;
+    }
 }
 
 .testimonialsTitle{
@@ -345,4 +364,20 @@ section{
     font-family: $fraunces;
     color: $grayishBlue;
     margin-bottom: 64px;
+    letter-spacing: 4px;
+}
+
+.clientAvatarDiv{
+    margin-bottom: 32px;
+}
+
+.clientAvatar{
+    border-radius: 50%;
+    width: 72px;
+}
+
+.clientTestimonyParagraph{
+    font-size: 18px;
+    color: $veryDarkGrayishBlue;   
+    font-weight: 400;
 }
