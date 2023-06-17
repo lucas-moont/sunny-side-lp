@@ -17,10 +17,10 @@ $servicesTextColor: #245349AA;
 
 /*Neutral*/
 
-$veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
-$veryDarkGrayishBlue: hsl(213, 9%, 39%);
-$darkGrayishBlue: hsl(232, 10%, 55%);
-$grayishBlue: hsl(210, 4%, 67%);
+$veryDarkDesaturatedBlue: #23303e;
+$veryDarkGrayishBlue: #5a636c;
+$darkGrayishBlue: #818498;
+$grayishBlue: #a7abae;
 $white: #FFF;
 $black: #000;
 $lowOpacityPink: #ff746355;
@@ -380,4 +380,18 @@ section{
     font-size: 18px;
     color: $veryDarkGrayishBlue;   
     font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.testimonyClientName{
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: $black;
+    line-height: 1.1em;
+    font-family: $fraunces;
+}
+
+.clientOccupation{
+    font-size: 14px;
+    color: $grayishBlue;
 }
