@@ -107,6 +107,13 @@ body{
     }
 }
 
+@mixin pseudoBackground{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-size: 100%;
+}
+
 /*HEADER DESKTOP*/
 
 .headerSection{
@@ -183,11 +190,15 @@ header{
     }
 }
 
-#transform,
-#standout{
+section{
     display: flex;
     justify-content: center;
+}
 
+/*Standout and Transform Sections*/
+
+#transform,
+#standout{
     @include fiftyBackground;
     padding: 0 32px;
     
@@ -263,4 +274,27 @@ header{
     transition: 0.5s;
     border-radius: 16px;
     z-index: -1;
+}
+
+/*SERVICES*/
+
+#services{
+    position: relative;
+    padding: 150px;
+
+    &:before{
+        left: 0;
+    }
+
+    &::after{
+        right: 0;
+    }
+
+    &:before,
+    &:after{
+        content: '';
+        @include pseudoBackground();
+        background-color: red;
+        top: 0;
+    }
 }
