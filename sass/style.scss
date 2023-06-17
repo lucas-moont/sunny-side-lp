@@ -102,7 +102,7 @@ body{
 
 @mixin imgHidden{
     opacity: 0;
-
+    max-width: 100%;
     @include mobile(){
         opacity: 1;
     }
@@ -114,6 +114,7 @@ body{
     width: 50%;
     height: 100%;
     background-size: cover;
+    background-position: center;
     top: 0;
     z-index: -1;
     background-repeat: no-repeat;
@@ -218,6 +219,13 @@ section{
 
     .firstCol{
         @include colText;
+    }
+
+    
+    .firstCol,
+    .secondCol{
+        width: 50%;
+        flex-shrink: 0;
     }
 }
 
@@ -394,4 +402,15 @@ section{
 .clientOccupation{
     font-size: 14px;
     color: $grayishBlue;
+}
+
+#colorFullImages{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include tablet(){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    img{
+        width: 100%;
+    }
 }
