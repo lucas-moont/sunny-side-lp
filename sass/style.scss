@@ -404,12 +404,15 @@ section{
     color: $grayishBlue;
 }
 
-#colorFullImages{
+#imageGallery{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    line-height: 0;
+
     @include tablet(){
         grid-template-columns: repeat(2, 1fr);
     }
+    
     img{
         width: 100%;
     }
