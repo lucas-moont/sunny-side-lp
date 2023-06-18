@@ -204,7 +204,8 @@ header{
     }
 }
 
-section{
+section,
+footer{
     display: flex;
     justify-content: center;
 }
@@ -416,4 +417,19 @@ section{
     img{
         width: 100%;
     }
+}
+
+footer{
+    padding: 64px 32px;
+    background-color: $lightCyan;
+    text-align: center;
+
+    .container{
+        display: block;
+    }
+}
+
+.footerLogo{
+    filter: brightness(0) saturate(100%) invert(34%) sepia(81%) saturate(308%) hue-rotate(118deg) brightness(97%) contrast(84%); 
+    margin-bottom: 32px;
 }
