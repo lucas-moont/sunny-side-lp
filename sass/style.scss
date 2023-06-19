@@ -427,25 +427,80 @@ footer {
     display: block;
   }
 
-  .footerNavigation ul {
+  .footerMenu {
+    margin-bottom: 64px;
+  }
+
+  .footerNavigation ul,
+  .socialIconsNav ul {
     display: flex;
-    gap: 32px;
     justify-content: center;
+  }
+
+  .footerNavigation ul {
+    gap: 32px;
+  }
+
+  .socialIconsNav ul {
+    gap: 16px;
   }
 
   .footerNavigation ul a {
     color: $greenLinksColor;
-		transition: 0.5s;
-		font-size: 18px;
+    transition: 0.5s;
+    font-size: 18px;
 
-		@include mobile(){
-			font-size: 14px;
-		}
+    @include mobile() {
+      font-size: 14px;
+    }
 
     &:hover {
       color: $white;
     }
+
   }
+
+	.socialIconsNav ul a{
+		display: inline-flex;
+
+		img{
+
+			transition: 0.5s;
+
+			&:hover{
+				filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(251deg) brightness(105%) contrast(101%);
+			}
+		}
+	}
+}
+
+.attribution{
+	padding: 16px;
+	background-color: $black;
+	color: $darkGrayishBlue;
+
+	a{
+		color: #8c0306 ;
+		position: relative !important;
+
+		&::before{
+			content: '';
+			left: 0;
+			position: absolute;
+			bottom: -1px;
+			background-color: #8c0306;
+			height: 1px;
+			display: inline-flex;
+			transition: 0.5s;
+			width: 0;
+		}
+
+		&:hover{
+			&::before{
+				width: 100%;
+			}
+		}
+	}
 }
 
 .footerLogo {
