@@ -8,7 +8,7 @@ $barlow: "Barlow", sans-serif;
 /*PRIMARY COLORS*/
 
 $softRed: hsl(7, 99%, 70%);
-$yellow: hsl(51, 100%, 49%);
+$yellow: #fad300;
 $darkDesaturatedCyan: #222f3f;
 $darkBlue: #19536b;
 $darkModerateCyan: #458c7e;
@@ -146,45 +146,51 @@ header {
   .container {
     justify-content: space-between;
     align-items: center;
-  }
 
-  ul {
-    display: flex;
-    align-items: center;
-
-    li:last-child a {
-      color: #000;
-      font-family: $fraunces;
-      display: inline-flex;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
-      height: 48px;
-      width: 130px;
-      background-color: $white;
-      border-radius: 16px;
-      transition: 0.5s;
-      border: 1px solid $white;
+    @include mobile(){
+      position: relative;
     }
-
-    li:last-child a:hover {
-      background-color: $lightCyan;
-      color: $white;
-    }
-  }
-
-  li {
-    margin-left: 48px;
-  }
-
-  a {
-    color: #fff;
   }
 
   .menuWrapper{
     @include mobile(){
       display: none;
     }
+
+    ul {
+      display: flex;
+      align-items: center;
+  
+      li:last-child a {
+        color: #000;
+        font-family: $fraunces;
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 48px;
+        width: 130px;
+        background-color: $white;
+        border-radius: 16px;
+        transition: 0.5s;
+        border: 1px solid $white;
+      }
+  
+      li:last-child a:hover {
+        background-color: $lightCyan;
+        color: $white;
+      }
+    }
+  
+    li {
+      margin-left: 48px;
+    }
+  
+    a {
+      color: #fff;
+    }
+  
+  
   }
 
   .menuMobileWrapper{
@@ -200,6 +206,60 @@ header {
     background-color: transparent;
     padding: 4px;
     border: 0;
+  }
+
+  .mobileMenuNavigation{
+    position: absolute;
+    left: 0;
+    top: 90px;
+    width: 100%;
+    background-color: $white;
+    padding: 0 16px;
+    z-index: 100;
+    transition: 0.5s;
+    transform: translateY(-8px);
+
+    &::before{
+      content: '';
+      position: absolute;
+      right: -25px;
+      width: 0px;
+      height: 0px;
+      top: -10px;
+      transform: rotate(-90deg);
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid $white;
+    }
+
+    a{
+      display: flex;
+      justify-content: center;
+      padding: 16px 0;
+      color: $veryDarkGrayishBlue;
+      font-size: 18px;
+      pointer-events: none;
+      .contactSpan{
+        padding: 12px 24px;
+        background-color: $yellow;
+        color: $black;
+        border-radius: 20px;
+      }
+    }
+
+    ul{
+      li:first-of-type{
+        a{
+          padding-top: 32px;
+        }
+      }
+
+      li:last-of-type{
+        a{
+          padding-bottom: 32px;
+        }
+      }
+    }
   }
 }
 
