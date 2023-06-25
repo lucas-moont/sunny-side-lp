@@ -239,6 +239,8 @@ header {
       color: $veryDarkGrayishBlue;
       font-size: 18px;
       pointer-events: none;
+      z-index: 101;
+
       .contactSpan{
         padding: 12px 24px;
         background-color: $yellow;
@@ -308,6 +310,11 @@ footer {
   .secondCol {
     width: 50%;
     flex-shrink: 0;
+
+    @include mobile(){
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
@@ -325,6 +332,18 @@ footer {
 
   .columnLearnMore:hover::after {
     background-color: #fad300;
+  }
+
+  @include mobile(){
+    padding: 0;
+
+    .container{
+      flex-direction: column-reverse;
+    }
+
+    .firstCol{
+      padding: 32px 16px;
+    }
   }
 }
 
