@@ -342,7 +342,7 @@ footer {
     }
 
     .firstCol{
-      padding: 32px 16px;
+      padding: 64px 16px;
     }
   }
 }
@@ -350,6 +350,7 @@ footer {
 #standout {
   background-image: url(/images/desktop/image-stand-out.jpg);
   background-position-x: left;
+
   .container {
     flex-direction: row-reverse;
   }
@@ -364,6 +365,16 @@ footer {
 
   .columnLearnMore:hover::after {
     background-color: $highOpacityPink;
+  }
+
+  @include mobile(){
+    padding: 0;
+    .container{
+      flex-direction: column-reverse;
+    }
+    .firstCol{
+      padding: 64px 16px;
+    }
   }
 }
 
