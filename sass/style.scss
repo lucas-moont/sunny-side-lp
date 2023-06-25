@@ -129,7 +129,7 @@ body {
   gap: 32px;
 }
 
-/*HEADER DESKTOP*/
+/*HEADER*/
 
 .headerSection {
   height: 100vh;
@@ -145,6 +145,7 @@ header {
 
   .container {
     justify-content: space-between;
+    align-items: center;
   }
 
   ul {
@@ -178,6 +179,27 @@ header {
 
   a {
     color: #fff;
+  }
+
+  .menuWrapper{
+    @include mobile(){
+      display: none;
+    }
+  }
+
+  .menuMobileWrapper{
+    display: none;
+
+    @include mobile(){
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  #hamburgMenuBtn{
+    background-color: transparent;
+    padding: 4px;
+    border: 0;
   }
 }
 
