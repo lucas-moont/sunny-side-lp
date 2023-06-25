@@ -131,6 +131,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+
+  @include mobile(){
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
 }
 
 /*HEADER*/
@@ -141,7 +146,13 @@ body {
   background-size: cover;
   background-position: center;
   padding: 32px;
+
+  @include mobile(){
+    background-image: url('/images/mobile/image-header.jpg');
+    height: 100vh;
+  }
 }
+
 
 header {
   display: flex;
@@ -222,7 +233,8 @@ header {
     z-index: 100;
     transition: 0.5s;
     transform: translateY(-8px);
-
+    opacity: 0;
+    
     &::before{
       content: '';
       position: absolute;
@@ -498,47 +510,58 @@ footer {
   .gridCol {
     text-align: center;
   }
+
+  .testimonialsTitle {
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    font-family: $fraunces;
+    color: $grayishBlue;
+    margin-bottom: 64px;
+    letter-spacing: 4px;
+  }
+  
+  .clientAvatarDiv {
+    margin-bottom: 32px;
+  }
+  
+  .clientAvatar {
+    border-radius: 50%;
+    width: 72px;
+  }
+  
+  .clientTestimonyParagraph {
+    font-size: 18px;
+    color: $veryDarkGrayishBlue;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  
+  .testimonyClientName {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: $black;
+    line-height: 1.1em;
+    font-family: $fraunces;
+  }
+  
+  .clientOccupation {
+    font-size: 14px;
+    color: $grayishBlue;
+  }
+
+  @include mobile(){
+    padding: 64px 16px;
+
+    .testimonialsTitle{
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+  }
 }
 
-.testimonialsTitle {
-  font-size: 22px;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 600;
-  font-family: $fraunces;
-  color: $grayishBlue;
-  margin-bottom: 64px;
-  letter-spacing: 4px;
-}
 
-.clientAvatarDiv {
-  margin-bottom: 32px;
-}
-
-.clientAvatar {
-  border-radius: 50%;
-  width: 72px;
-}
-
-.clientTestimonyParagraph {
-  font-size: 18px;
-  color: $veryDarkGrayishBlue;
-  font-weight: 400;
-  margin-bottom: 16px;
-}
-
-.testimonyClientName {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: $black;
-  line-height: 1.1em;
-  font-family: $fraunces;
-}
-
-.clientOccupation {
-  font-size: 14px;
-  color: $grayishBlue;
-}
 
 #imageGallery {
   display: grid;
