@@ -221,6 +221,8 @@ header {
     background-color: transparent;
     padding: 4px;
     border: 0;
+    color: $white;
+    font-size: 24px;
   }
 
   .mobileMenuNavigation{
@@ -234,7 +236,12 @@ header {
     transition: 0.5s;
     transform: translateY(-8px);
     opacity: 0;
-    
+    display: none;
+
+    @include mobile{
+      display: block;
+    }
+
     &::before{
       content: '';
       position: absolute;
