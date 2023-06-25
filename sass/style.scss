@@ -119,6 +119,10 @@ body {
   top: 0;
   z-index: -1;
   background-repeat: no-repeat;
+
+  @include mobile(){
+    display: none;
+  }
 }
 
 /*GENERAL*/
@@ -423,6 +427,7 @@ footer {
 
   .container {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &:before {
@@ -460,6 +465,25 @@ footer {
     font-family: $barlow;
     span {
       max-width: 328px;
+    }
+  }
+
+  @include mobile(){
+    .firstCol,
+    .secondCol{
+      width: 100%;
+      flex-shrink: 0;
+      background-size: cover;
+      background-position: center;
+      padding-top: 350px;
+    }
+
+    .firstCol{
+      background-image: url('/images/mobile/image-graphic-design.jpg');
+    }
+
+    .secondCol{
+      background-image: url('/images/mobile/image-photography.jpg');
     }
   }
 }
